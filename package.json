@@ -1,5 +1,5 @@
 {
-  "name": "@ibt/genuuidjs",
+  "name": "@didi/ibt-fe-genuuidjs",
   "version": "0.0.2",
   "description": "",
   "main": "./lib/index.js",
@@ -14,6 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "jiaweiya",
+  "license": "ISC",
+  "mail": "jiaweiya@didiglobal.com"
 }

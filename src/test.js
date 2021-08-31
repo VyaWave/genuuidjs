@@ -8,7 +8,7 @@ class mageTracer {
 
     const uid = uuidv4();
     const timestamp = new Date().valueOf();
-    const md5uid = md5(`${timestamp} + ${uid} + traceId`)
+    const md5uid = md5(`${timestamp} + ${Math.random()} + ${uid} + traceId`)
 
     return md5uid
 
@@ -18,7 +18,16 @@ class mageTracer {
 
     const uid = uuidv4();
     const timestamp = new Date().valueOf();
-    const md5uid = md5(`${timestamp} + ${uid} + spanId`)
+    const md5uid = md5(`${timestamp} + ${Math.random()} + ${uid} + spanId`)
+
+    return md5uid
+  }
+
+  createUuid() {
+
+    const uid = uuidv4();
+    const timestamp = new Date().valueOf();
+    const md5uid = md5(`${timestamp} + ${Math.random()}+ ${uid} + uuid`)
 
     return md5uid
   }
@@ -32,7 +41,7 @@ const testSingleTracer = (times) => {
 
   for(let a = 0; a < times; a ++) {
 
-    const uuid = tracer.createTraceId()
+    const uuid = tracer.createUuid()
     traceIdArr.push(uuid)
 
   }
@@ -47,6 +56,8 @@ const testSingleTracer = (times) => {
 
 const testBatcherTracer = (count, times) => {
 
+  console.info(`====== RUN TEST STARING: Total is ${times} x ${count} times ========`)
+
   let allPassed = true
 
   for (let a = 0; a < count; a ++) {
@@ -58,9 +69,7 @@ const testBatcherTracer = (count, times) => {
 
   }
 
-  console.info("====== 💪 single test count ========", times)
-  console.info("====== 🙏 all test count ========", count)
-  console.info("====== 👏 all test result ========", allPassed)
+  console.info(`====== TEST RESULT IS ${allPassed}  ========`)
 
   return allPassed
 }
