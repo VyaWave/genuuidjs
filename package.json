@@ -1,5 +1,5 @@
 {
-  "name": "@didi/ibt-fe-genuuidjs",
+  "name": "genuuidjs",
   "version": "0.0.2",
   "description": "",
   "main": "./lib/index.js",
@@ -16,5 +16,5 @@
   },
   "author": "jiaweiya",
   "license": "ISC",
-  "mail": "jiaweiya@didiglobal.com"
+  "mail": "wave.weiya@gmail.com"
 }
